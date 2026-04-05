@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeForge — Master AI-Powered Coding</title>
+  <meta name="description" content="The definitive learning platform for Claude Code, Ollama, Gemma 4, and GitHub Copilot. Interactive roadmap, flashcards, and premium guides." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/styles/main.css" />
+</head>
+<body>
+  <!-- Three.js Canvas -->
+  <canvas id="webgl"></canvas>
+
+  <!-- Loading Screen -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <span class="loader-text">Forging your experience...</span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav id="nav">
+    <a href="#" class="nav-logo">
+      <span class="logo-mark">⬡</span> CodeForge
+    </a>
+    <div class="nav-links">
+      <a href="#roadmap">Roadmap</a>
+      <a href="#claude-code">Claude Code</a>
+      <a href="#slash-commands">Commands</a>
+      <a href="#hooks">Hooks</a>
+      <a href="#ollama">Ollama</a>
+      <a href="#copilot">Copilot</a>
+      <a href="#flashcards">Flashcards</a>
+    </div>
+  </nav>
+
+  <!-- Scroll Container -->
+  <main id="main">
+
+    <!-- ═══════════ HERO ═══════════ -->
+    <section id="hero" class="section hero">
+      <div class="hero-content">
+        <p class="hero-overline" data-animate="fade-up">The Definitive Learning Platform</p>
+        <h1 class="hero-title" data-animate="fade-up" data-delay="0.1">
+          Master<br/><em>AI-Powered</em><br/>Coding Tools
+        </h1>
+        <p class="hero-subtitle" data-animate="fade-up" data-delay="0.2">
+          Claude Code &middot; Ollama + Gemma&nbsp;4 &middot; GitHub Copilot
+        </p>
+        <div class="hero-cta" data-animate="fade-up" data-delay="0.35">
+          <a href="#roadmap" class="btn btn-primary">Start the Journey</a>
+          <a href="#flashcards" class="btn btn-secondary">Practice Flashcards</a>
+        </div>
+      </div>
+      <div class="scroll-hint" data-animate="fade-up" data-delay="0.5">
+        <span>Scroll to explore</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════ ROADMAP ═══════════ -->
+    <section id="roadmap" class="section">
+      <div class="container">
+        <div class="section-header" data-animate="fade-up">
+          <p class="section-overline">Learning Path</p>
+          <h2 class="section-title">Your Roadmap to Mastery</h2>
+          <p class="section-desc">Six phases, from first install to advanced workflows. Each phase builds on the last.</p>
+        </div>
+        <div class="roadmap-track">
+
+          <div class="roadmap-item" data-animate="fade-up" data-delay="0.05">
+            <div class="roadmap-number">01</div>
+            <div class="roadmap-card">
+              <h3>Environment Setup</h3>
+              <p>Install Node.js, Git for Windows, Claude Code CLI, Ollama, and pull Gemma&nbsp;4. Verify everything works.</p>
+              <ul>
+                <li>Install Git for Windows</li>
+                <li><code>irm https://claude.ai/install.ps1 | iex</code></li>
+                <li><code>ollama pull gemma4</code></li>
+                <li>Run <code>claude --version</code> to verify</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="roadmap-item" data-animate="fade-up" data-delay="0.1">
+            <div class="roadmap-number">02</div>
+            <div class="roadmap-card">
+              <h3>Claude Code Fundamentals</h3>
+              <p>Learn to navigate projects, edit files, run commands, and have conversations with your codebase.</p>
+              <ul>
+                <li>Run <code>claude</code> in any project to start</li>
+                <li>Ask questions about your code</li>
+                <li>Let Claude edit files and run tests</li>
+                <li>Use <code>/help</code> to see all commands</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="roadmap-item" data-animate="fade-up" data-delay="0.15">
+            <div class="roadmap-number">03</div>
+            <div class="roadmap-card">
+              <h3>CLAUDE.md &amp; Memory</h3>
+              <p>Give Claude persistent context with instruction files and let it learn automatically from your corrections.</p>
+              <ul>
+                <li>Create <code>CLAUDE.md</code> in your project root</li>
+                <li>Run <code>/init</code> to auto-generate instructions</li>
+                <li>Organize rules in <code>.claude/rules/</code></li>
+                <li>Use auto memory for learned preferences</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="roadmap-item" data-animate="fade-up" data-delay="0.2">
+            <div class="roadmap-number">04</div>
+            <div class="roadmap-card">
+              <h3>Local AI with Ollama + Gemma&nbsp;4</h3>
+              <p>Run frontier-level AI locally. Understand model sizes, thinking modes, and multimodal inputs.</p>
+              <ul>
+                <li>Choose model size: E2B, E4B, 26B, or 31B</li>
+                <li><code>ollama launch claude --model gemma4</code></li>
+                <li>Enable thinking with <code>&lt;|think|&gt;</code></li>
+                <li>Pass images and audio for multimodal tasks</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="roadmap-item" data-animate="fade-up" data-delay="0.25">
+            <div class="roadmap-number">05</div>
+            <div class="roadmap-card">
+              <h3>GitHub Copilot &amp; Multi-Tool Workflows</h3>
+              <p>Combine Claude Code with GitHub Copilot for the ultimate coding setup. Know when to use which tool.</p>
+              <ul>
+                <li>Copilot for inline autocomplete</li>
+                <li>Claude Code for agentic multi-file tasks</li>
+                <li>Copilot Chat in VS Code sidebar</li>
+                <li>Use both together without conflicts</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="roadmap-item" data-animate="fade-up" data-delay="0.3">
+            <div class="roadmap-number">06</div>
+            <div class="roadmap-card">
+              <h3>Advanced Patterns &amp; Deployment</h3>
+              <p>Skills, hooks, subagents, CI/CD integration, headless mode, and team workflows at scale.</p>
+              <ul>
+                <li>Create custom skills for repeatable tasks</li>
+                <li>Use hooks for pre/post command logic</li>
+                <li>GitHub Actions with Claude Code</li>
+                <li>Team-wide CLAUDE.md deployment</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ CLAUDE CODE ═══════════ -->
+    <section id="claude-code" class="section section-alt">
+      <div class="container">
+        <div class="section-header" data-animate="fade-up">
+          <p class="section-overline">Deep Dive</p>
+          <h2 class="section-title">Claude Code</h2>
+          <p class="section-desc">An agentic coding tool by Anthropic that reads your codebase, edits files, runs commands, and integrates with your entire dev stack.</p>
+        </div>
+
+        <div class="content-grid">
+          <!-- Installation -->
+          <div class="content-card card-wide" data-animate="fade-up">
+            <div class="card-badge">Installation</div>
+            <h3>Get Started in 60 Seconds</h3>
+            <div class="install-tabs">
+              <button class="tab-btn active" data-tab="win">Windows</button>
+              <button class="tab-btn" data-tab="mac">macOS / Linux</button>
+            </div>
+            <div class="tab-content active" id="tab-win">
+              <p>Requires <strong>Git for Windows</strong>. Install it first from <code>git-scm.com</code>, then open PowerShell:</p>
+              <pre><code>irm https://claude.ai/install.ps1 | iex</code></pre>
+              <p>Verify with:</p>
+              <pre><code>claude --version</code></pre>
+            </div>
+            <div class="tab-content" id="tab-mac">
+              <pre><code>curl -fsSL https://claude.ai/install.sh | bash</code></pre>
+              <p>Then start in any project:</p>
+              <pre><code>cd your-project
+claude</code></pre>
+            </div>
+            <p class="card-note">Requires a Pro, Max, Team, Enterprise, or Console account. Auto-updates in the background.</p>
+          </div>
+
+          <!-- Key Commands -->
+          <div class="content-card" data-animate="fade-up" data-delay="0.05">
+            <div class="card-badge">Commands</div>
+            <h3>Essential Commands</h3>
+            <div class="command-list">
+              <div class="cmd"><code>claude</code><span>Start interactive session</span></div>
+              <div class="cmd"><code>/init</code><span>Generate CLAUDE.md for project</span></div>
+              <div class="cmd"><code>/help</code><span>List all available commands</span></div>
+              <div class="cmd"><code>/memory</code><span>View and manage memory files</span></div>
+              <div class="cmd"><code>/compact</code><span>Compress context window</span></div>
+              <div class="cmd"><code>claude update</code><span>Update to latest version</span></div>
+              <div class="cmd"><code>claude doctor</code><span>Diagnose installation issues</span></div>
+            </div>
+          </div>
+
+          <!-- Permission Modes -->
+          <div class="content-card" data-animate="fade-up" data-delay="0.1">
+            <div class="card-badge">Security</div>
+            <h3>Permission Modes</h3>
+            <p>Claude Code asks permission before running commands or editing files. Three built-in modes:</p>
+            <div class="mode-list">
+              <div class="mode"><strong>Ask</strong> — Confirms every action (most safe)</div>
+              <div class="mode"><strong>Auto-edit</strong> — Auto-approves file edits, asks for commands</div>
+              <div class="mode"><strong>Full auto</strong> — Runs everything autonomously (fastest)</div>
+            </div>
+            <p class="card-note">Start with Ask mode. Graduate to auto-edit when you trust the workflow.</p>
+          </div>
+
+          <!-- What It Can Do -->
+          <div class="content-card" data-animate="fade-up" data-delay="0.15">
+            <div class="card-badge">Capabilities</div>
+            <h3>What Claude Code Does</h3>
+            <ul class="feature-list">
+              <li>Reads and understands your entire codebase</li>
+              <li>Edits multiple files in coordinated changes</li>
+              <li>Runs shell commands, tests, and builds</li>
+              <li>Creates commits and pull requests</li>
+              <li>Connects external tools via MCP servers</li>
+              <li>Runs custom agent teams (subagents)</li>
+              <li>Works in Terminal, VS Code, JetBrains, Desktop, Web</li>
+            </ul>
+          </div>
+
+          <!-- Best Practices -->
+          <div class="content-card" data-animate="fade-up" data-delay="0.2">
+            <div class="card-badge">Tips</div>
+            <h3>Best Practices</h3>
+            <ul class="feature-list">
+              <li>Be specific in your requests — "fix the login bug in auth.ts" beats "fix bugs"</li>
+              <li>Let Claude explore first — "what does this codebase do?" before asking for changes</li>
+              <li>Use <code>/compact</code> in long sessions to free context space</li>
+              <li>Write a <code>CLAUDE.md</code> so Claude knows project conventions from the start</li>
+              <li>Review changes before committing — Claude is good, but verify</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ CLAUDE.md DEEP DIVE ═══════════ -->
+    <section id="claudemd" class="section">
+      <div class="container">
+        <div class="section-header" data-animate="fade-up">
+          <p class="section-overline">Configuration</p>
+          <h2 class="section-title">Understanding CLAUDE.md</h2>
+          <p class="section-desc">Markdown files that give Claude persistent instructions. Written by you, read at the start of every session.</p>
+        </div>
+
+        <div class="content-grid">
+          <div class="content-card card-wide" data-animate="fade-up">
+            <div class="card-badge">File Hierarchy</div>
+            <h3>Where to Place CLAUDE.md Files</h3>
+            <div class="hierarchy-diagram">
+              <div class="hier-item">
+                <div class="hier-scope">Organization</div>
+                <code>C:\Program Files\ClaudeCode\CLAUDE.md</code>
+                <span class="hier-desc">Company-wide standards managed by IT</span>
+              </div>
+              <div class="hier-arrow">↓</div>
+              <div class="hier-item">
+                <div class="hier-scope">User</div>
+                <code>~/.claude/CLAUDE.md</code>
+                <span class="hier-desc">Your personal preferences for all projects</span>
+              </div>
+              <div class="hier-arrow">↓</div>
+              <div class="hier-item">
+                <div class="hier-scope">Project</div>
+                <code>./CLAUDE.md</code> or <code>./.claude/CLAUDE.md</code>
+                <span class="hier-desc">Team-shared project instructions (via Git)</span>
+              </div>
+              <div class="hier-arrow">↓</div>
+              <div class="hier-item">
+                <div class="hier-scope">Local</div>
+                <code>./CLAUDE.local.md</code>
+                <span class="hier-desc">Personal project-specific prefs (gitignored)</span>
+              </div>
+            </div>
+            <p class="card-note">More specific files take precedence. All discovered files concatenate — they don't override.</p>
+          </div>
+
+          <div class="content-card" data-animate="fade-up" data-delay="0.05">
+            <div class="card-badge">Writing Tips</div>
+            <h3>Effective Instructions</h3>
+            <ul class="feature-list">
+              <li>Keep it under <strong>200 lines</strong> per file</li>
+              <li>Use markdown headers and bullets</li>
+              <li>Be specific: <code>"Use 2-space indentation"</code> not <code>"Format code properly"</code></li>
+              <li>Include build/test commands</li>
+              <li>Remove conflicting or outdated rules</li>
+              <li>Use <code>@path/to/file</code> to import other files</li>
+            </ul>
+          </div>
+
+          <div class="content-card" data-animate="fade-up" data-delay="0.1">
+            <div class="card-badge">Rules System</div>
+            <h3>.claude/rules/ Directory</h3>
+            <pre class="code-tree"><code>your-project/
+├── .claude/
+│   ├── CLAUDE.md
+│   └── rules/
+│       ├── code-style.md
+│       ├── testing.md
+│       └── security.md</code></pre>
+            <p>Rules can be <strong>path-scoped</strong> with YAML frontmatter:</p>
+            <pre><code>---
+paths:
+  - "src/api/**/*.ts"
+---
+# API Rules
+- Validate all inputs
+- Use standard error format</code></pre>
+          </div>
+
+          <div class="content-card" data-animate="fade-up" data-delay="0.15">
+            <div class="card-badge">Auto Memory</div>
+            <h3>Claude Learns Automatically</h3>
+            <p>Auto memory lets Claude save notes for itself across sessions — build commands, debugging insights, your preferences.</p>
+            <div class="command-list">
+              <div class="cmd"><code>/memory</code><span>Browse and manage saved memories</span></div>
+              <div class="cmd"><code>MEMORY.md</code><span>Index file (first 200 lines loaded)</span></div>
+            </div>
+            <p>Stored at <code>~/.claude/projects/&lt;project&gt;/memory/</code></p>
+            <p class="card-note">Auto memory is plain markdown you can read, edit, or delete anytime.</p>
+          </div>
+
+          <div class="content-card" data-animate="fade-up" data-delay="0.2">
+            <div class="card-badge">Example</div>
+            <h3>Sample CLAUDE.md</h3>
+            <pre><code># Project Instructions
+
+## Build
+- `npm run dev` to start dev server
+- `npm test` to run jest tests
+
+## Code Style
+- Use TypeScript strict mode
+- 2-space indentation
+- Prefer named exports
+- API handlers in src/api/handlers/
+
+## Workflow
+- Run tests before committing
+- Use conventional commits
+- Never push to main directly
+
+## Architecture
+@docs/architecture.md</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ CLAUDE CODE: ALL SLASH COMMANDS ═══════════ -->
+    <section id="slash-commands" class="section section-alt">
+      <div class="container">
+        <div class="section-header" data-animate="fade-up">
+          <p class="section-overline">Reference</p>
+          <h2 class="section-title">Claude Code Slash Commands</h2>
+          <p class="section-desc">Type <code>/</code> in Claude Code to see all available commands. Here is the complete reference.</p>
+        </div>
+
+        <div class="cmd-grid" data-animate="fade-up">
+          <div class="cmd-group">
+            <h3>Session Management</h3>
+            <div class="command-list">
+              <div class="cmd"><code>/clear</code><span>Clear conversation history and free context. Aliases: /reset, /new</span></div>
+              <div class="cmd"><code>/compact [instructions]</code><span>Compress conversation with optional focus instructions</span></div>
+              <div class="cmd"><code>/resume [session]</code><span>Resume by ID/name or open picker. Alias: /continue</span></div>
+              <div class="cmd"><code>/rename [name]</code><span>Rename current session, shows in prompt bar</span></div>
+              <div class="cmd"><code>/branch [name]</code><span>Branch conversation at this point. Alias: /fork</span></div>
+              <div class="cmd"><code>/rewind</code><span>Rewind to a previous point. Alias: /checkpoint</span></div>
+              <div class="cmd"><code>/exit</code><span>Exit the CLI. Alias: /quit</span></div>
+              <div class="cmd"><code>/export [filename]</code><span>Export conversation as plain text</span></div>
+              <div class="cmd"><code>/copy [N]</code><span>Copy last (or Nth) assistant response to clipboard</span></div>
+            </div>
+          </div>
+
+          <div class="cmd-group">
+            <h3>Configuration &amp; Setup</h3>
+            <div class="command-list">
+              <div class="cmd"><code>/init</code><span>Generate CLAUDE.md guide for your project</span></div>
+              <div class="cmd"><code>/config</code><span>Open Settings (theme, model, output). Alias: /settings</span></div>
+              <div class="cmd"><code>/memory</code><span>Edit CLAUDE.md, toggle auto-memory, view entries</span></div>
+              <div class="cmd"><code>/permissions</code><span>Manage allow/ask/deny tool rules. Alias: /allowed-tools</span></div>
+              <div class="cmd"><code>/model [model]</code><span>Select or change AI model. Arrow keys for effort</span></div>
+              <div class="cmd"><code>/effort [low|med|high|max]</code><span>Set model effort. max = Opus 4.6 only</span></div>
+              <div class="cmd"><code>/fast [on|off]</code><span>Toggle fast mode on or off</span></div>
+              <div class="cmd"><code>/theme</code><span>Change color theme (light, dark, colorblind)</span></div>
+              <div class="cmd"><code>/color [color]</code><span>Set prompt bar color for this session</span></div>
+              <div class="cmd"><code>/keybindings</code><span>Open keybindings configuration</span></div>
+              <div class="cmd"><code>/terminal-setup</code><span>Configure terminal keybindings (Shift+Enter etc.)</span></div>
+            </div>
+          </div>
+
+          <div class="cmd-group">
+            <h3>Tools &amp; Integrations</h3>
+            <div class="command-list">
+              <div class="cmd"><code>/hooks</code><span>View hook configurations for tool events</span></div>
+              <div class="cmd"><code>/mcp</code><span>Manage MCP server connections and OAuth auth</span></div>
+              <div class="cmd"><code>/plugin</code><span>Manage Claude Code plugins</span></div>
+              <div class="cmd"><code>/skills</code><span>List available skills</span></div>
+              <div class="cmd"><code>/agents</code><span>Manage agent configurations</span></div>
+              <div class="cmd"><code>/ide</code><span>Manage IDE integrations and status</span></div>
+              <div class="cmd"><code>/chrome</code><span>Configure Claude in Chrome settings</span></div>
+              <div class="cmd"><code>/add-dir &lt;path&gt;</code><span>Add working directory for file access</span></div>
+            </div>
+          </div>
+
+          <div class="cmd-group">
+            <h3>Analytics &amp; Debugging</h3>
+            <div class="command-list">
+              <div class="cmd"><code>/cost</code><span>Show token usage statistics</span></div>
+              <div class="cmd"><code>/usage</code><span>Show plan limits and rate limit status</span></div>
+              <div class="cmd"><code>/stats</code><span>Visualize daily usage, sessions, streaks</span></div>
+              <div class="cmd"><code>/context</code><span>Visualize context usage as a colored grid</span></div>
+              <div class="cmd"><code>/diff</code><span>Interactive diff viewer for uncommitted changes</span></div>
+              <div class="cmd"><code>/doctor</code><span>Diagnose and verify your installation</span></div>
+              <div class="cmd"><code>/insights</code><span>Analyze your Claude Code sessions</span></div>
+              <div class="cmd"><code>/help</code><span>Show help and available commands</span></div>
+            </div>
+          </div>
+
+          <div class="cmd-group">
+            <h3>Account &amp; Workflow</h3>
+            <div class="command-list">
+              <div class="cmd"><code>/login</code><span>Sign in to Anthropic account</span></div>
+              <div class="cmd"><code>/logout</code><span>Sign out from your account</span></div>
+              <div class="cmd"><code>/plan [desc]</code><span>Enter plan mode, optionally with a task</span></div>
+              <div class="cmd"><code>/ultraplan &lt;prompt&gt;</code><span>Draft plan, review in browser, execute</span></div>
+              <div class="cmd"><code>/security-review</code><span>Analyze branch changes for vulnerabilities</span></div>
+              <div class="cmd"><code>/tasks</code><span>List and manage background tasks</span></div>
+              <div class="cmd"><code>/schedule [desc]</code><span>Create/list Cloud scheduled tasks</span></div>
+              <div class="cmd"><code>/remote-control</code><span>Make session available from claude.ai. Alias: /rc</span></div>
+              <div class="cmd"><code>/desktop</code><span>Continue session in Desktop app. Alias: /app</span></div>
+            </div>
+          </div>
+
+          <div class="cmd-group">
+            <h3>Community &amp; Extras</h3>
+            <div class="command-list">
+              <div class="cmd"><code>/btw &lt;question&gt;</code><span>Ask a quick side question without polluting context</span></div>
+              <div class="cmd"><code>/voice</code><span>Toggle push-to-talk voice dictation</span></div>
+              <div class="cmd"><code>/feedback [report]</code><span>Submit feedback or bug report</span></div>
+              <div class="cmd"><code>/release-notes</code><span>Interactive changelog version picker</span></div>
+              <div class="cmd"><code>/powerup</code><span>Quick interactive feature lessons with demos</span></div>
+              <div class="cmd"><code>/statusline</code><span>Configure Claude Code's status line</span></div>
+              <div class="cmd"><code>/extra-usage</code><span>Configure extra usage for rate limits</span></div>
+              <div class="cmd"><code>/upgrade</code><span>Open upgrade page for higher plan tier</span></div>
+              <div class="cmd"><code>/privacy-settings</code><span>View and update privacy settings (Pro/Max)</span></div>
+              <div class="cmd"><code>/mobile</code><span>QR code for Claude mobile app</span></div>
+              <div class="cmd"><code>/stickers</code><span>Order Claude Code stickers</span></div>
+            </div>
+          </div>
+
+          <div class="cmd-group">
+            <h3>Bundled Skills (Slash Commands)</h3>
+            <div class="command-list">
+              <div class="cmd"><code>/simplify</code><span>Simplify and clean up code</span></div>
+              <div class="cmd"><code>/batch</code><span>Batch operations across multiple files</span></div>
+              <div class="cmd"><code>/debug</code><span>Debug an issue with Claude's help</span></div>
+              <div class="cmd"><code>/loop</code><span>Iterative loop until condition is met</span></div>
+              <div class="cmd"><code>/install-github-app</code><span>Set up Claude GitHub Actions app</span></div>
+              <div class="cmd"><code>/install-slack-app</code><span>Install Claude Slack app (OAuth flow)</span></div>
+              <div class="cmd"><code>/reload-plugins</code><span>Reload all active plugins</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ CLAUDE CODE: CLI FLAGS ═══════════ -->
+    <section id="cli-flags" class="section">
+      <div class="container">
+        <div class="section-header" data-animate="fade-up">
+          <p class="section-overline">CLI Reference</p>
+          <h2 class="section-title">CLI Flags &amp; Arguments</h2>
+          <p class="section-desc">Launch-time flags that customize how Claude Code behaves. Run <code>claude --help</code> for a quick overview.</p>
+        </div>
+
+        <div class="content-grid">
+          <div class="content-card" data-animate="fade-up">
+            <div class="card-badge">Core</div>
+            <h3>Session &amp; Conversation</h3>
+            <div class="command-list">
+              <div class="cmd"><code>claude</code><span>Start interactive session</span></div>
+              <div class="cmd"><code>claude "query"</code><span>Start with initial prompt</span></div>
+              <div class="cmd"><code>claude -p "query"</code><span>Print mode (pipe-friendly)</span></div>
+              <div class="cmd"><code>claude -c</code><span>Continue most recent conversation</span></div>
+              <div class="cmd"><code>claude -r &lt;id&gt;</code><span>Resume session by ID/name</span></div>
+              <div class="cmd"><code>claude -n "name"</code><span>Name the session</span></div>
+              <div class="cmd"><code>claude update</code><span>Update to latest version</span></div>
+              <div class="cmd"><code>claude auth login</code><span>Sign in (--console for API billing)</span></div>
+              <div class="cmd"><code>claude auth status</code><span>Show auth status as JSON</span></div>
+              <div class="cmd"><code>claude doctor</code><span>Diagnose installation</span></div>
+              <div class="cmd"><code>claude agents</code><span>List all configured subagents</span></div>
+              <div class="cmd"><code>claude mcp</code><span>Configure MCP servers</span></div>
+              <div class="cmd"><code>claude plugin</code><span>Manage plugins</span></div>
+            </div>
+          </div>
+
+          <div class="content-card" data-animate="fade-up" data-delay="0.05">
+            <div class="card-badge">Model &amp; Behavior</div>
+            <h3>Model &amp; Permission Flags</h3>
+            <div class="command-list">
+              <div class="cmd"><code>--model</code><span>Set model (sonnet, opus, or full name)</span></div>
+              <div class="cmd"><code>--effort</code><span>Set effort: low, medium, high, max</span></div>
+              <div class="cmd"><code>--permission-mode</code><span>default, acceptEdits, plan, auto, dontAsk</span></div>
+              <div class="cmd"><code>--enable-auto-mode</code><span>Unlock auto mode in Shift+Tab cycle</span></div>
+              <div class="cmd"><code>--allowedTools</code><span>Tools that execute without prompting</span></div>
+              <div class="cmd"><code>--disallowedTools</code><span>Tools removed from model context</span></div>
+              <div class="cmd"><code>--tools</code><span>Restrict which built-in tools are available</span></div>
+              <div class="cmd"><code>--agent</code><span>Specify agent for session</span></div>
+              <div class="cmd"><code>--agents</code><span>Define custom subagents via JSON</span></div>
+            </div>
+          </div>
+
+          <div class="content-card" data-animate="fade-up" data-delay="0.1">
+            <div class="card-badge">System Prompts</div>
+            <h3>Prompt Customization</h3>
+            <div class="command-list">
+              <div class="cmd"><code>--system-prompt</code><span>Replace entire default prompt</span></div>
+              <div class="cmd"><code>--system-prompt-file</code><span>Replace with file contents</span></div>
+              <div class="cmd"><code>--append-system-prompt</code><span>Append to default prompt</span></div>
+              <div class="cmd"><code>--append-system-prompt-file</code><span>Append file contents to prompt</span></div>
+            </div>
+            <p class="card-note">For most use cases, use append flags. They preserve Claude's built-in capabilities while adding your requirements.</p>
+          </div>
+
+          <div class="content-card" data-animate="fade-up" data-delay="0.15">
+            <div class="card-badge">Output &amp; Formats</div>
+            <h3>Output Control</h3>
+            <div class="command-list">
+              <div class="cmd"><code>--output-format</code><span>text, json, or stream-json</span></div>
+              <div class="cmd"><code>--json-schema</code><span>Validated JSON matching a schema</span></div>
+              <div class="cmd"><code>--max-turns</code><span>Limit agentic turns (print mode)</span></div>
+              <div class="cmd"><code>--max-budget-usd</code><span>Maximum dollar spend before stopping</span></div>
+              <div class="cmd"><code>--fallback-model</code><span>Auto-fallback when overloaded</span></div>
+              <div class="cmd"><code>--verbose</code><span>Full turn-by-turn output</span></div>
+              <div class="cmd"><code>--debug</code><span>Debug mode with category filtering</span></div>
+            </div>
+          </div>
+
+          <div class="content-card" data-animate="fade-up" data-delay="0.2">
+            <div class="card-badge">Advanced</div>
+            <h3>Worktrees, Remote &amp; Advanced</h3>
+            <div class="command-list">
+              <div class="cmd"><code>--worktree, -w</code><span>Isolated git worktree session</span></div>
+              <div class="cmd"><code>--tmux</code><span>Create tmux session (with --worktree)</span></div>
+              <div class="cmd"><code>--remote</code><span>New web session on claude.ai</span></div>
+              <div class="cmd"><code>--remote-control</code><span>Start Remote Control server</span></div>
+              <div class="cmd"><code>--teleport</code><span>Resume web session in local terminal</span></div>
+              <div class="cmd"><code>--chrome</code><span>Enable Chrome browser integration</span></div>
+              <div class="cmd"><code>--bare</code><span>Minimal mode: skip hooks, skills, plugins</span></div>
+              <div class="cmd"><code>--add-dir</code><span>Add extra working directories</span></div>
+              <div class="cmd"><code>--mcp-config</code><span>Load MCP servers from JSON</span></div>
+              <div class="cmd"><code>--settings</code><span>Load additional settings JSON</span></div>
+              <div class="cmd"><code>--init-only</code><span>Run init hooks then exit</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ CLAUDE CODE: HOOKS ═══════════ -->
+    <section id="hooks" class="section section-alt">
+      <div class="container">
+        <div class="section-header" data-animate="fade-up">
+          <p class="section-overline">Automation</p>
+          <h2 class="section-title">Hooks</h2>
+          <p class="section-desc">User-defined shell commands, HTTP endpoints, or LLM prompts that execute automatically at specific lifecycle points. The power-user feature.</p>
+        </div>
+
+        <div class="content-grid">
+          <div class="content-card card-wide" data-animate="fade-up">
+            <div class="card-badge">Concept</div>
+            <h3>What Are Hooks?</h3>
+            <p>Hooks fire at specific points during a Claude Code session. When an event fires and a matcher matches, Claude Code passes JSON context to your handler. Hooks have 4 types:</p>
+            <div class="mode-list">
+              <div class="mode"><strong>command</strong> — Run a shell command. Input via stdin, output via exit codes + stdout</div>
+              <div class="mode"><strong>http</strong> — POST JSON to a URL endpoint. Response body for decisions</div>
+              <div class="mode"><strong>prompt</strong> — Single-turn LLM evaluation with yes/no JSON decision</div>
+              <div class="mode"><strong>agent</strong> — Multi-turn subagent that can use tools (Read, Grep, Glob) to verify</div>
+            </div>
+            <p class="card-note">Hooks are configured in JSON settings files at user, project, or local scope.</p>
+          </div>
+
+          <div class="content-card card-wide" data-animate="fade-up" data-delay="0.05">
+            <div class="card-badge">All Events</div>
+            <h3>Hook Lifecycle Events</h3>
+            <p>Every event in Claude Code's lifecycle where hooks can fire:</p>
+            <div class="hook-events-grid">
+              <div class="hook-event-group">
+                <h4>Session Lifecycle</h4>
+                <div class="command-list">
+                  <div class="cmd"><code>SessionStart</code><span>Session begins or resumes</span></div>
+                  <div class="cmd"><code>SessionEnd</code><span>Session terminates</span></div>
+                  <div class="cmd"><code>UserPromptSubmit</code><span>User submits a prompt (can block)</span></div>
+                  <div class="cmd"><code>InstructionsLoaded</code><span>CLAUDE.md or rules loaded</span></div>
+                  <div class="cmd"><code>ConfigChange</code><span>Settings file changes (can block)</span></div>
+                  <div class="cmd"><code>CwdChanged</code><span>Working directory changes</span></div>
+                  <div class="cmd"><code>FileChanged</code><span>Watched file changes on disk</span></div>
+                </div>
+              </div>
+              <div class="hook-event-group">
+                <h4>Tool Lifecycle</h4>
+                <div class="command-list">
+                  <div class="cmd"><code>PreToolUse</code><span>Before tool executes (can block/allow/deny/defer)</span></div>
+                  <div class="cmd"><code>PostToolUse</code><span>After tool succeeds</span></div>
+                  <div class="cmd"><code>PostToolUseFailure</code><span>After tool fails</span></div>
+                  <div class="cmd"><code>PermissionRequest</code><span>Permission dialog appears (can allow/deny)</span></div>
+                  <div class="cmd"><code>PermissionDenied</code><span>Auto-mode denies tool (can retry)</span></div>
+                </div>
+              </div>
+              <div class="hook-event-group">
+                <h4>Agents &amp; Tasks</h4>
+                <div class="command-list">
+                  <div class="cmd"><code>SubagentStart</code><span>Subagent spawned</span></div>
+                  <div class="cmd"><code>SubagentStop</code><span>Subagent finished</span></div>
+                  <div class="cmd"><code>TaskCreated</code><span>Task being created (can block)</span></div>
+                  <div class="cmd"><code>TaskCompleted</code><span>Task marked complete (can block)</span></div>
+                  <div class="cmd"><code>TeammateIdle</code><span>Team member about to idle (can block)</span></div>
+                </div>
+              </div>
+              <div class="hook-event-group">
+                <h4>Completion &amp; Misc</h4>
+                <div class="command-list">
+                  <div class="cmd"><code>Stop</code><span>Claude finishes (can prevent stopping)</span></div>
+                  <div class="cmd"><code>StopFailure</code><span>Turn ends due to API error</span></div>
+                  <div class="cmd"><code>Notification</code><span>Notification sent to user</span></div>
+                  <div class="cmd"><code>PreCompact</code><span>Before context compaction</span></div>
+                  <div class="cmd"><code>PostCompact</code><span>After compaction completes</span></div>
+                  <div class="cmd"><code>WorktreeCreate</code><span>Worktree being created</span></div>
+                  <div class="cmd"><code>WorktreeRemove</code><span>Worktree being removed</span></div>
+                  <div class="cmd"><code>Elicitation</code><span>MCP server requests user input</span></div>
+                  <div class="cmd"><code>ElicitationResult</code><span>User responds to MCP elicitation</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-card" data-animate="fade-up" data-delay="0.1">
+            <div class="card-badge">Config Locations</div>
+            <h3>Where to Define Hooks</h3>
+            <div class="command-list">
+              <div class="cmd"><code>~/.claude/settings.json</code><span>All projects (user scope)</span></div>
+              <div class="cmd"><code>.claude/settings.json</code><span>Single project (commit to repo)</span></div>
+              <div class="cmd"><code>.claude/settings.local.json</code><span>Personal project (gitignored)</span></div>
+              <div class="cmd"><code>Managed policy</code><span>Organization-wide (admin)</span></div>
+              <div class="cmd"><code>Plugin hooks</code><span>Bundled with plugin</span></div>
+              <div class="cmd"><code>Skill/agent frontmatter</code><span>YAML in component file</span></div>
+            </div>
+          </div>
+
+          <div class="content-card" data-animate="fade-up" data-delay="0.15">
+            <div class="card-badge">Exit Codes</div>
+            <h3>How Hooks Respond</h3>
+            <div class="mode-list">
+              <div class="mode"><strong>Exit 0</strong> — Success. stdout parsed for JSON. Tool call proceeds.</div>
+              <div class="mode"><strong>Exit 2</strong> — Blocking error. stderr fed to Claude. Tool call blocked.</div>
+              <div class="mode"><strong>Other</strong> — Non-blocking error. stderr in verbose mode. Execution continues.</div>
+            </div>
+            <p>Or return JSON on exit 0 for richer control:</p>
+            <pre><code>{
+  "hookSpecificOutput": {
+    "hookEventName": "PreToolUse",
+    "permissionDecision": "deny",
+    "permissionDecisionReason": "Destructive command blocked"
+  }
+}</code></pre>
+          </div>
+
+          <div class="content-card" data-animate="fade-up" data-delay="0.2">
+            <div class="card-badge">Example</div>
+            <h3>Block Destructive Commands</h3>
+            <p>A PreToolUse hook that prevents <code>rm -rf</code>:</p>
+            <pre><code>{
+  "hooks": {
+    "PreToolUse": [{
+      "matcher": "Bash",
+      "hooks": [{
+        "type": "command",
+        "if": "Bash(rm *)",
+        "command": ".claude/hooks/block-rm.sh"
+      }]
+    }]
+  }
+}</code></pre>
+            <p>The script reads JSON stdin, checks the command, and returns <code>permissionDecision: "deny"</code> if it contains <code>rm -rf</code>.</p>
+          </div>
+
+          <div class="content-card" data-animate="fade-up" data-delay="0.25">
+            <div class="card-badge">Async &amp; Advanced</div>
+            <h3>Background &amp; Prompt Hooks</h3>
+            <ul class="feature-list">
+              <li><strong>Async hooks</strong> — Add <code>"async": true</code> to run in background while Claude continues</li>
+              <li><strong>Prompt hooks</strong> — LLM evaluates conditions with yes/no JSON response</li>
+              <li><strong>Agent hooks</strong> — Subagent with tool access verifies before deciding</li>
+              <li><strong>HTTP hooks</strong> — POST to a URL, response body for decisions</li>
+              <li><strong>PowerShell</strong> — Set <code>"shell": "powershell"</code> for Windows hooks</li>
+              <li><strong>MCP matching</strong> — Use <code>mcp__server__tool</code> patterns in matchers</li>
+              <li><strong>disableAllHooks</strong> — Temporarily turn off all hooks in settings</li>
+              <li>Run <code>claude --debug</code> to see hook execution details</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ OLLAMA + GEMMA 4 ═══════════ -->
+    <section id="ollama" class="section section-alt">
+      <div class="container">
+        <div class="section-header" data-animate="fade-up">
+          <p class="section-overline">Local AI</p>
+          <h2 class="section-title">Ollama + Gemma&nbsp;4</h2>
+          <p class="section-desc">Run frontier-level AI on your own hardware. No cloud, no API keys, full privacy.</p>
+        </div>
+
+        <div class="content-grid">
+          <div class="content-card card-wide" data-animate="fade-up">
+            <div class="card-badge">Setup</div>
+            <h3>Getting Started with Ollama</h3>
+            <p>Ollama is a local AI runtime. Install it, pull a model, and start chatting — or launch Claude Code with it.</p>
+            <div class="steps">
+              <div class="step">
+                <div class="step-num">1</div>
+                <div>
+                  <strong>Install Ollama</strong>
+                  <p>Download from <code>ollama.com/download</code> for Windows, macOS, or Linux.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">2</div>
+                <div>
+                  <strong>Pull Gemma 4</strong>
+                  <pre><code>ollama pull gemma4</code></pre>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">3</div>
+                <div>
+                  <strong>Run it</strong>
+                  <pre><code>ollama run gemma4</code></pre>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">4</div>
+                <div>
+                  <strong>Launch with Claude Code</strong>
+                  <pre><code>ollama launch claude --model gemma4</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-card" data-animate="fade-up" data-delay="0.05">
+            <div class="card-badge">Models</div>
+            <h3>Gemma 4 Model Sizes</h3>
+            <div class="model-table">
+              <div class="model-row model-header">
+                <span>Model</span><span>Size</span><span>Context</span><span>Best For</span>
+              </div>
+              <div class="model-row">
+                <span><strong>E2B</strong></span><span>7.2 GB</span><span>128K</span><span>Mobile &amp; edge devices</span>
+              </div>
+              <div class="model-row">
+                <span><strong>E4B</strong></span><span>9.6 GB</span><span>128K</span><span>Laptops, daily coding</span>
+              </div>
+              <div class="model-row">
+                <span><strong>26B</strong></span><span>18 GB</span><span>256K</span><span>Workstation MoE power</span>
+              </div>
+              <div class="model-row">
+                <span><strong>31B</strong></span><span>20 GB</span><span>256K</span><span>Max local intelligence</span>
+              </div>
+            </div>
+            <p class="card-note">E4B is the sweet spot for most developers. 26B uses Mixture-of-Experts with only 3.8B active params.</p>
+          </div>
+
+          <div class="content-card" data-animate="fade-up" data-delay="0.1">
+            <div class="card-badge">Features</div>
+            <h3>What Makes Gemma 4 Special</h3>
+            <ul class="feature-list">
+              <li><strong>Multimodal</strong> — text, image, and audio input (E2B/E4B)</li>
+              <li><strong>Thinking mode</strong> — configurable reasoning with <code>&lt;|think|&gt;</code></li>
+              <li><strong>Native tool calling</strong> — function calling for agentic workflows</li>
+              <li><strong>System prompts</strong> — native <code>system</code> role support</li>
+              <li><strong>Variable resolution</strong> — token budgets for image detail control</li>
+              <li><strong>128K–256K context</strong> — process long documents locally</li>
+            </ul>
+          </div>
+
+          <div class="content-card" data-animate="fade-up" data-delay="0.15">
+            <div class="card-badge">Config</div>
+            <h3>Recommended Settings</h3>
+            <p>For best results with Gemma 4:</p>
+            <div class="command-list">
+              <div class="cmd"><code>temperature</code><span>1.0</span></div>
+              <div class="cmd"><code>top_p</code><span>0.95</span></div>
+              <div class="cmd"><code>top_k</code><span>64</span></div>
+            </div>
+            <p>For thinking mode, include <code>&lt;|think|&gt;</code> at the start of the system prompt. In multi-turn conversations, strip thoughts from history — only keep final responses.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ GITHUB COPILOT & COMPARISONS ═══════════ -->
+    <section id="copilot" class="section">
+      <div class="container">
+        <div class="section-header" data-animate="fade-up">
+          <p class="section-overline">Multi-Tool Strategy</p>
+          <h2 class="section-title">GitHub Copilot &amp; Others</h2>
+          <p class="section-desc">Different tools shine in different areas. Use them together for maximum productivity.</p>
+        </div>
+
+        <div class="content-grid">
+          <div class="content-card card-wide" data-animate="fade-up">
+            <div class="card-badge copilot-badge">GitHub Copilot</div>
+            <h3>Complete Feature Set</h3>
+            <p>Copilot lives inside your editor and provides AI assistance through multiple surfaces:</p>
+            <ul class="feature-list">
+              <li><strong>Ghost text autocomplete</strong> — real-time inline code suggestions as you type</li>
+              <li><strong>Copilot Chat</strong> — sidebar conversations (Ctrl+Alt+I) for multi-turn Q&amp;A</li>
+              <li><strong>Inline chat</strong> — in-place code edits (Ctrl+I) right in the editor</li>
+              <li><strong>Quick chat</strong> — lightweight panel (Ctrl+Shift+Alt+L) for fast questions</li>
+              <li><strong>Agent mode</strong> — autonomous multi-file editing with tool access</li>
+              <li><strong>CLI</strong> — <code>code chat</code> from terminal for outside-editor access</li>
+              <li><strong>PR summaries</strong> — auto-generated pull request descriptions</li>
+              <li>Works with VS Code, JetBrains, Visual Studio, Neovim, Xcode</li>
+            </ul>
+          </div>
+
+          <!-- Copilot Slash Commands -->
+          <div class="content-card" data-animate="fade-up" data-delay="0.05">
+            <div class="card-badge copilot-badge">Slash Commands</div>
+            <h3>Chat Slash Commands</h3>
+            <p>Type <code>/</code> in any Copilot Chat input:</p>
+            <div class="command-list">
+              <div class="cmd"><code>/clear</code><span>Start a new chat session</span></div>
+              <div class="cmd"><code>/explain</code><span>Explain how active editor code works</span></div>
+              <div class="cmd"><code>/fix</code><span>Propose a fix for problems in selected code</span></div>
+              <div class="cmd"><code>/fixTestFailure</code><span>Find and fix a failing test</span></div>
+              <div class="cmd"><code>/help</code><span>Quick reference for using Copilot</span></div>
+              <div class="cmd"><code>/new</code><span>Create a new project scaffold</span></div>
+              <div class="cmd"><code>/tests</code><span>Generate unit tests for selected code</span></div>
+              <div class="cmd"><code>/compact</code><span>Compress conversation context</span></div>
+              <div class="cmd"><code>/search</code><span>Search workspace for code (also @vscode)</span></div>
+              <div class="cmd"><code>/newNotebook</code><span>Create a new Jupyter notebook</span></div>
+              <div class="cmd"><code>/setupTests</code><span>Set up test framework for project</span></div>
+              <div class="cmd"><code>/init</code><span>Generate workspace instructions file</span></div>
+              <div class="cmd"><code>/create-prompt</code><span>Create reusable .prompt.md file</span></div>
+              <div class="cmd"><code>/plan</code><span>Research and plan with Plan agent</span></div>
+              <div class="cmd"><code>/delete</code><span>Delete a conversation</span></div>
+              <div class="cmd"><code>/rename</code><span>Rename a conversation</span></div>
+            </div>
+          </div>
+
+          <!-- Chat Participants -->
+          <div class="content-card" data-animate="fade-up" data-delay="0.1">
+            <div class="card-badge copilot-badge">@ Participants</div>
+            <h3>Chat Participants</h3>
+            <p>Type <code>@</code> to invoke domain-specific experts:</p>
+            <div class="command-list">
+              <div class="cmd"><code>@workspace</code><span>Context about project structure and code interaction</span></div>
+              <div class="cmd"><code>@vscode</code><span>Context about VS Code commands and features</span></div>
+              <div class="cmd"><code>@terminal</code><span>Context about terminal shell and contents</span></div>
+              <div class="cmd"><code>@github</code><span>GitHub-specific skills (issues, PRs, repos)</span></div>
+              <div class="cmd"><code>@azure</code><span>Azure services, deployment, and management</span></div>
+            </div>
+          </div>
+
+          <!-- Chat Variables -->
+          <div class="content-card" data-animate="fade-up" data-delay="0.15">
+            <div class="card-badge copilot-badge"># Variables</div>
+            <h3>Context Variables</h3>
+            <p>Type <code>#</code> to attach specific context:</p>
+            <div class="command-list">
+              <div class="cmd"><code>#file</code><span>Include a specific file's content</span></div>
+              <div class="cmd"><code>#selection</code><span>Currently selected text</span></div>
+              <div class="cmd"><code>#codebase</code><span>Full codebase context</span></div>
+              <div class="cmd"><code>#terminalSelection</code><span>Terminal output</span></div>
+              <div class="cmd"><code>#function</code><span>Current function or method</span></div>
+              <div class="cmd"><code>#class</code><span>Current class</span></div>
+              <div class="cmd"><code>#block</code><span>Current code block</span></div>
+              <div class="cmd"><code>#line</code><span>Current line of code</span></div>
+              <div class="cmd"><code>#comment</code><span>Current comment</span></div>
+              <div class="cmd"><code>#sym</code><span>Current symbol</span></div>
+              <div class="cmd"><code>#path</code><span>File path</span></div>
+              <div class="cmd"><code>#project</code><span>Project context</span></div>
+              <div class="cmd"><code>#fetch</code><span>Fetch content from a URL</span></div>
+            </div>
+          </div>
+
+          <!-- Agent Modes -->
+          <div class="content-card" data-animate="fade-up" data-delay="0.2">
+            <div class="card-badge copilot-badge">Agent Modes</div>
+            <h3>Agent Types &amp; Permissions</h3>
+            <p>Choose how Copilot operates in chat:</p>
+            <div class="mode-list">
+              <div class="mode"><strong>Agent</strong> — Autonomous multi-file edits, runs terminal commands, uses tools</div>
+              <div class="mode"><strong>Plan</strong> — Research and plan without making changes</div>
+              <div class="mode"><strong>Ask</strong> — Q&amp;A only, no code modifications</div>
+            </div>
+            <p>Session types: <strong>Local</strong> (interactive in editor), <strong>Background</strong>, or <strong>Cloud</strong>.</p>
+            <p>Permission levels control tool approval autonomy.</p>
+          </div>
+
+          <!-- Copilot Customization -->
+          <div class="content-card" data-animate="fade-up" data-delay="0.25">
+            <div class="card-badge copilot-badge">Customization</div>
+            <h3>Extending Copilot</h3>
+            <ul class="feature-list">
+              <li><strong>.github/copilot-instructions.md</strong> — project-wide custom instructions</li>
+              <li><strong>.prompt.md files</strong> — reusable prompt templates</li>
+              <li><strong>Custom agents</strong> — specialized .agent.md workflows</li>
+              <li><strong>MCP servers</strong> — connect external tools and APIs</li>
+              <li><strong>Checkpoints</strong> — auto-snapshots for rollback</li>
+              <li><strong>Vision</strong> — attach images/screenshots as context</li>
+              <li><strong>Agent Debug view</strong> — inspect raw prompts and tool payloads</li>
+            </ul>
+          </div>
+
+          <div class="content-card card-wide" data-animate="fade-up" data-delay="0.3">
+            <div class="card-badge">Comparison</div>
+            <h3>When to Use What</h3>
+            <div class="compare-table">
+              <div class="compare-row compare-header">
+                <span>Task</span><span>Claude Code</span><span>GitHub Copilot</span><span>Ollama Local</span>
+              </div>
+              <div class="compare-row">
+                <span>Inline autocomplete</span><span class="meh">—</span><span class="yes">★★★</span><span class="meh">—</span>
+              </div>
+              <div class="compare-row">
+                <span>Multi-file refactor</span><span class="yes">★★★</span><span class="ok">★★</span><span class="ok">★★</span>
+              </div>
+              <div class="compare-row">
+                <span>Codebase Q&amp;A</span><span class="yes">★★★</span><span class="ok">★★</span><span class="ok">★</span>
+              </div>
+              <div class="compare-row">
+                <span>Run commands/tests</span><span class="yes">★★★</span><span class="ok">★</span><span class="meh">—</span>
+              </div>
+              <div class="compare-row">
+                <span>Git workflow</span><span class="yes">★★★</span><span class="ok">★★</span><span class="meh">—</span>
+              </div>
+              <div class="compare-row">
+                <span>Privacy / offline</span><span class="meh">—</span><span class="meh">—</span><span class="yes">★★★</span>
+              </div>
+              <div class="compare-row">
+                <span>Free tier</span><span class="meh">—</span><span class="ok">★★</span><span class="yes">★★★</span>
+              </div>
+            </div>
+            <p class="card-note">The ideal setup: Copilot for real-time autocomplete, Claude Code for complex tasks, Ollama for offline/private work.</p>
+          </div>
+
+          <div class="content-card" data-animate="fade-up" data-delay="0.35">
+            <div class="card-badge">Workflow</div>
+            <h3>Using Them Together</h3>
+            <ol class="feature-list numbered">
+              <li><strong>Start typing</strong> — Copilot suggests inline completions</li>
+              <li><strong>Hit a wall</strong> — ask Copilot Chat for explanations</li>
+              <li><strong>Need multi-file changes</strong> — switch to Claude Code CLI</li>
+              <li><strong>Working offline</strong> — use Ollama + Gemma 4 locally</li>
+              <li><strong>Code review</strong> — Claude Code creates the PR with description</li>
+              <li><strong>Sensitive code</strong> — keep it local with Ollama</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ FLASHCARDS ═══════════ -->
+    <section id="flashcards" class="section section-alt">
+      <div class="container">
+        <div class="section-header" data-animate="fade-up">
+          <p class="section-overline">Memory Station</p>
+          <h2 class="section-title">Flashcards &amp; Quick Recall</h2>
+          <p class="section-desc">Click any card to flip it. Practice until you can answer without peeking. Spaced repetition: review today, tomorrow, then in 3 days.</p>
+        </div>
+        <div class="flashcard-grid" id="flashcard-grid">
+          <!-- Cards injected by JS -->
+        </div>
+        <div class="flashcard-controls" data-animate="fade-up">
+          <button id="fc-prev" class="btn btn-secondary">← Previous Set</button>
+          <span id="fc-page">Set 1 / 3</span>
+          <button id="fc-next" class="btn btn-secondary">Next Set →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ CHEAT SHEET ═══════════ -->
+    <section id="cheatsheet" class="section">
+      <div class="container">
+        <div class="section-header" data-animate="fade-up">
+          <p class="section-overline">Quick Reference</p>
+          <h2 class="section-title">Cheat Sheet</h2>
+        </div>
+        <div class="cheat-grid" data-animate="fade-up">
+          <div class="cheat-col">
+            <h3>Claude Code CLI</h3>
+            <div class="cheat-row"><code>claude</code><span>Start session</span></div>
+            <div class="cheat-row"><code>claude "task"</code><span>One-shot prompt</span></div>
+            <div class="cheat-row"><code>claude -p "q"</code><span>Print mode (pipe-friendly)</span></div>
+            <div class="cheat-row"><code>claude --resume</code><span>Resume last session</span></div>
+            <div class="cheat-row"><code>claude --model opus</code><span>Use specific model</span></div>
+            <div class="cheat-row"><code>claude --effort high</code><span>Set effort level</span></div>
+            <div class="cheat-row"><code>claude --worktree</code><span>Isolated git worktree</span></div>
+            <div class="cheat-row"><code>claude --bare -p</code><span>Minimal fast mode</span></div>
+            <div class="cheat-row"><code>claude doctor</code><span>Diagnose installation</span></div>
+            <div class="cheat-row"><code>claude agents</code><span>List subagents</span></div>
+          </div>
+          <div class="cheat-col">
+            <h3>Key Slash Commands</h3>
+            <div class="cheat-row"><code>/init</code><span>Generate CLAUDE.md</span></div>
+            <div class="cheat-row"><code>/memory</code><span>Manage memory</span></div>
+            <div class="cheat-row"><code>/compact</code><span>Compress context</span></div>
+            <div class="cheat-row"><code>/config</code><span>Open settings</span></div>
+            <div class="cheat-row"><code>/hooks</code><span>View hook configs</span></div>
+            <div class="cheat-row"><code>/plan [desc]</code><span>Enter plan mode</span></div>
+            <div class="cheat-row"><code>/diff</code><span>Interactive diff viewer</span></div>
+            <div class="cheat-row"><code>/security-review</code><span>Security scan changes</span></div>
+            <div class="cheat-row"><code>/btw &lt;q&gt;</code><span>Side question</span></div>
+            <div class="cheat-row"><code>/voice</code><span>Push-to-talk dictation</span></div>
+          </div>
+          <div class="cheat-col">
+            <h3>Ollama</h3>
+            <div class="cheat-row"><code>ollama pull gemma4</code><span>Download model</span></div>
+            <div class="cheat-row"><code>ollama run gemma4</code><span>Chat locally</span></div>
+            <div class="cheat-row"><code>ollama list</code><span>Show installed models</span></div>
+            <div class="cheat-row"><code>ollama rm gemma4</code><span>Remove model</span></div>
+            <div class="cheat-row"><code>ollama serve</code><span>Start API server</span></div>
+            <div class="cheat-row"><code>ollama launch claude --model gemma4</code><span>Claude + Gemma 4</span></div>
+          </div>
+          <div class="cheat-col">
+            <h3>Copilot Essentials</h3>
+            <div class="cheat-row"><code>/explain</code><span>Explain code</span></div>
+            <div class="cheat-row"><code>/fix</code><span>Propose fix</span></div>
+            <div class="cheat-row"><code>/tests</code><span>Generate tests</span></div>
+            <div class="cheat-row"><code>@workspace</code><span>Project context</span></div>
+            <div class="cheat-row"><code>@terminal</code><span>Terminal context</span></div>
+            <div class="cheat-row"><code>#file</code><span>Include specific file</span></div>
+            <div class="cheat-row"><code>#codebase</code><span>Full codebase context</span></div>
+            <div class="cheat-row"><code>Ctrl+Alt+I</code><span>Open Chat view</span></div>
+            <div class="cheat-row"><code>Ctrl+I</code><span>Inline chat</span></div>
+            <div class="cheat-row"><code>Tab</code><span>Accept ghost text</span></div>
+          </div>
+          <div class="cheat-col">
+            <h3>Hook Events</h3>
+            <div class="cheat-row"><code>PreToolUse</code><span>Block/allow tools</span></div>
+            <div class="cheat-row"><code>PostToolUse</code><span>After tool success</span></div>
+            <div class="cheat-row"><code>Stop</code><span>Prevent stopping</span></div>
+            <div class="cheat-row"><code>SessionStart</code><span>Load context</span></div>
+            <div class="cheat-row"><code>UserPromptSubmit</code><span>Filter prompts</span></div>
+            <div class="cheat-row"><code>TaskCompleted</code><span>Enforce quality gates</span></div>
+            <div class="cheat-row"><code>exit 0</code><span>Allow (parse JSON)</span></div>
+            <div class="cheat-row"><code>exit 2</code><span>Block (stderr → Claude)</span></div>
+          </div>
+          <div class="cheat-col">
+            <h3>CLAUDE.md Patterns</h3>
+            <div class="cheat-row"><code>./CLAUDE.md</code><span>Project-wide</span></div>
+            <div class="cheat-row"><code>~/.claude/CLAUDE.md</code><span>User-wide</span></div>
+            <div class="cheat-row"><code>./CLAUDE.local.md</code><span>Personal+gitignored</span></div>
+            <div class="cheat-row"><code>.claude/rules/*.md</code><span>Modular rules</span></div>
+            <div class="cheat-row"><code>@path/to/file</code><span>Import syntax</span></div>
+            <div class="cheat-row"><code>paths: ["**/*.ts"]</code><span>Scoped rules frontmatter</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ FOOTER ═══════════ -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <span class="logo-mark">⬡</span> CodeForge
+          <p>Built with Three.js, GSAP, and genuine research.</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h4>Official Docs</h4>
+            <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener">Claude Code Docs</a>
+            <a href="https://ollama.com" target="_blank" rel="noopener">Ollama</a>
+            <a href="https://docs.github.com/en/copilot" target="_blank" rel="noopener">GitHub Copilot Docs</a>
+          </div>
+          <div>
+            <h4>Models</h4>
+            <a href="https://ollama.com/library/gemma4" target="_blank" rel="noopener">Gemma 4 on Ollama</a>
+            <a href="https://ai.google.dev/gemma" target="_blank" rel="noopener">Gemma by Google</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Open-source learning resource. All product names belong to their respective owners.</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
