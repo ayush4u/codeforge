@@ -3,7 +3,7 @@ import glsl from 'vite-plugin-glsl';
 
 export default defineConfig({
   plugins: [glsl()],
-  base: '/codeforge/',
+  base: process.env.NODE_ENV === 'production' ? '/codeforge/' : '/',
   server: {
     port: 5179,
     open: true,
