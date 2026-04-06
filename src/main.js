@@ -486,11 +486,49 @@ function initHeroAnimation() {
 }
 
 /* ═══════════════════════════════════
+   MOBILE NAV (HAMBURGER)
+   ═══════════════════════════════════ */
+const hamburger = document.getElementById('nav-hamburger');
+const mobileNav = document.getElementById('mobile-nav');
+
+function closeMobileNav() {
+  hamburger.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  mobileNav.classList.remove('open');
+  mobileNav.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+hamburger.addEventListener('click', () => {
+  const isOpen = mobileNav.classList.contains('open');
+  if (isOpen) {
+    closeMobileNav();
+  } else {
+    hamburger.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    mobileNav.classList.add('open');
+    mobileNav.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+});
+
+// Close on backdrop click
+mobileNav.addEventListener('click', (e) => {
+  if (!e.target.closest('.mobile-nav-inner')) closeMobileNav();
+});
+
+// Close when a link is tapped
+document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+  link.addEventListener('click', closeMobileNav);
+});
+
+/* ═══════════════════════════════════
    RESIZE HANDLER
    ═══════════════════════════════════ */
 window.addEventListener('resize', () => {
   const w = window.innerWidth;
   const h = window.innerHeight;
+  if (w > 768) closeMobileNav();
   camera.aspect = w / h;
   camera.updateProjectionMatrix();
   renderer.setSize(w, h);
